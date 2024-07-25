@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Consultas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+    <h3 class="titulo-consulta">Consultas Agendadas</h3>
+
+    <table class="tableConsulta table-hover">
+        <thead class="table-consulta">
+            <tr>
+                <th class="rotulo">Status</th>
+                <th  class="rotulo">Data</th>
+                <th  class="rotulo">Hora</th>
+                <th  class="rotulo">Especialidade</th>
+                <th  class="rotulo">Médico</th>
+            </tr>
+        </thead>
+        <tbody id="filmes-tbody">
+            
+        </tbody>
+    </table>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filmes = [
+                { Status: 'Agendado', Data: '26-06-24', Hora: '8:30', Especialidade: 'Pediatra', Médico: 'João Fernando' },
+                { Status: 'Finalizado', Data: '11-06-24', Hora: '7:30', Especialidade: 'Cardiologista', Médico: 'Luiz Magalhães' },
+                { Status: 'Agendado', Data: '11-08-24', Hora: '7:00', Especialidade: 'Clinico Geral', Médico: 'Paulo Henrique' }
+
+            ];
+
+            const tbody = document.getElementById('filmes-tbody');
+            filmes.forEach(item => {
+                const row = document.createElement('tr');
+                row.id = `row-${item.id}`;
+
+                row.innerHTML = `
+                <td>${item.Status}</td>
+                <td>${item.Data}</td>
+                <td>${item.Hora}</td>
+                <td>${item.Especialidade}</td>
+                <td>${item.Médico}</td>
+            `;
+                tbody.appendChild(row);
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

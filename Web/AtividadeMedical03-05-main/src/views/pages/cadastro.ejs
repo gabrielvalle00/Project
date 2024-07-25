@@ -1,0 +1,396 @@
+<div class="card col-md-12">
+  <h5 class="card-header">Cadastrar-se</h5>
+  <div class="card-body">
+    <!-- inicio do formulário -->
+    <h5 class="card-title" style="margin-top: 30px"></h5>
+    <form class="form-goup" action="/cadastro" method="post">
+
+      <!-- Seleção do tipo de cadastro -->
+      <fieldset class="form-group">
+        <legend class="col-form-label col-sm-2 pt-0" style="font-weight: bold;">Tipo de Cadastro</legend>
+        <div class="container">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="perfil" id="cadastroMedico" value="medico"
+              onchange="toggleDadosProfissionais()" required>
+            <label class="form-check-label" for="cadastroMedico">
+              Médico
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="perfil" id="cadastroPaciente" value="paciente"
+              onchange="toggleDadosProfissionais()">
+            <label class="form-check-label" for="cadastroPaciente">
+              Paciente
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="perfil" id="cadastroAdm" value="Administrador"
+              onchange="toggleDadosProfissionais()">
+            <label class="form-check-label" for="cadastroAdm">
+              Administrador
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- inicio dados pessoais    -->
+      <fieldset class="form-group">
+        <legend class="col-form-label col-sm-2 pt-0" style="font-weight: bold;">Dados pessoais</legend>
+        <!-- inserir nome -->
+        <div class="container">
+          <div class="form-floating mb-3 col-md-12">
+            <input type="text" class="form-control" id="titulo" name="nome" placeholder="" required />
+            <label for="titulo">Inserir nome completo</label>
+          </div>
+        </div>
+        <!-- inicio alinha-horizontal -->
+        <div class="alinhar-em-linha">
+          <!-- inserir cpf-->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="number" min="0" class="form-control" id="floatingInput" name="cpf" placeholder="" required />
+              <label for="floatingInput">Inserir CPF</label>
+            </div>
+          </div>
+          <!-- inserir nascimento -->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="date" placeholder min="0" class="form-control" id="floatingInput" name="data_nasc" placeholder=""
+                required />
+              <label for="floatingInput">Inserir data nascimento</label>
+            </div>
+          </div>
+          <!-- inserir sexo -->
+          <div class="container">
+            <select name="genero" class="caixa-genero">
+              <option selected>Inserir gênero</option>
+              <option value="mas">Masculino</option>
+              <option value="fem">Feminino</option>
+              <option value="outro">Outros</option>
+            </select>
+          </div>
+        </div>
+        <!-- fim alinha-horizontal -->
+      </fieldset>
+
+      <fieldset id="dadosProfissionais" style="display: none;">
+        <legend class="col-form-label col-sm-2 pt-0" style="font-weight: bold;">
+          Dados profissionais
+        </legend>
+        <!-- inicio dados profissionais -->
+        <div class="alinhar-em-linha">
+          <!-- inserir crm-->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="number" min="0" class="form-control" id="floatingInput" name="crm" placeholder="" required />
+              <label for="floatingInput">Inserir CRM</label>
+            </div>
+          </div>
+          <!-- inserir data admissão -->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="date" placeholder min="0" class="form-control" id="floatingInput" name="data_admissao" placeholder=""
+                required />
+              <label for="floatingInput">Inserir data admissão</label>
+            </div>
+          </div>
+
+          <!-- selecione o perfil -->
+          <!-- <div class="container">
+            <select name="perfil" class="caixa-estado" required>
+              <option selected>Inserir tipo perfil</option>
+              <option value="funci">Médico</option>
+              <option value="admin">Administrador</option>
+              <option value="pacie">Paciente</option>
+            </select>
+          </div> -->
+          <!-- fim selecione o perfil -->
+
+          <!-- selecione a especialidade -->
+          <div class="container">
+            <select name="desc_especialidade" class="caixa-estado" required>
+              <option selected>Inserir especialidade</option>
+              <option value="pediatria">Pediatria</option>
+              <option value="clinico">Clinico</option>
+              <option value="oftamologo">Oftamologo</option>
+              <option value="nutricionista">Nutricionista</option>
+              <option value="cardiologista">Cardiologista</option>
+              <option value="ginecologista">Ginecologista</option>
+              <option value="ortopedista">Ortopedista</option>
+            </select>
+          </div>
+          <!-- fim selecione o perfil -->
+        </div>
+        <!-- fim de dados profissionais -->
+      </fieldset>
+      <!-- fim de dados pessoais -->
+
+      <fieldset>
+        <legend class="col-form-label col-sm-2 pt-0" style="font-weight: bold;">
+          Dados de login
+        </legend>
+        <!-- inicio dados para login -->
+        <div class="alinhar-em-linha">
+          <!-- inserir login-->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="email" min="0" class="form-control" id="floatingInput" name="login" placeholder=""
+                required />
+              <label for="floatingInput">Inserir e-mail de login</label>
+            </div>
+          </div>
+          <!-- inserir senha -->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="senhaInput" name="senha" placeholder="Sua senha" readonly
+                required />
+              <label for="senhaInput">Sua senha</label>
+            </div>
+          </div>
+
+          <!-- selecione o status do perfil -->
+          <div class="container">
+            <select name="status" class="caixa-estado" required>
+              <option selected>Status do cadastro</option>
+              <option value="1">Ativo</option>
+              <option value="0">Inativo</option>
+            </select>
+          </div>
+          <!-- fim selecione o perfil -->
+
+          <!-- selecione a especialidade -->
+          <!-- fim selecione o perfil -->
+        </div>
+        <!-- fim de dados profissionais -->
+      </fieldset>
+      <!-- fim de dados pessoais -->
+
+      <!-- dados de contatos -->
+      <fieldset class="form-group">
+        <legend class="col-form-label col-sm-2 pt-0" style="font-weight: bold;">Dados de contato</legend>
+        <div class="alinhar-em-linha">
+          <!-- inserir telefone 01-->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="tel" class="form-control" id="floatingInput" name="tel1" placeholder="" required />
+              <label for="floatingInput">Inserir telefone principal</label>
+            </div>
+          </div>
+          <!-- inserir telefone 02-->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="tel" class="form-control" id="floatingInput" name="tel2" placeholder="" required />
+              <label for="floatingInput">Inserir telefone recado</label>
+            </div>
+          </div>
+          <!-- inserir e-mail -->
+          <div class="container">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" name="email" placeholder="" required />
+              <label for="floatingInput">Inserir e-mail</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <!-- fim de dados de contatos -->
+
+      <!-- dados de endereço -->
+      <fieldset class="form-group">
+        <legend class="col-form-label col-sm-2 pt-0" style="font-weight: bold;">Endereço</legend>
+        <!-- inserir nome logradouro -->
+        <div class="container">
+          <div class="form-floating mb-3 col-md-12">
+            <input type="text" class="form-control" id="titulo" name="logradouro" placeholder="" required />
+            <label for="titulo">Inserir logradouro</label>
+          </div>
+        </div>
+        <!-- inserir complemento -->
+        <div class="container">
+          <div class="form-floating mb-3 col-md-12">
+            <input type="text" class="form-control" id="titulo" name="complemento" placeholder="" />
+            <label for="titulo">Inserir complemento</label>
+          </div>
+        </div>
+
+        <!-- alinha-horizontal -->
+        <div class="alinhar-em-linha">
+          <!-- inicio inserir bairro -->
+          <div class="container">
+            <div class="form-floating mb-3 col-md-12">
+              <input type="text" class="form-control" id="titulo" name="bairro" placeholder="" required />
+              <label for="titulo">Inserir bairro</label>
+            </div>
+          </div>
+
+          <!-- inicio inserir cidade -->
+          <div class="container">
+            <div class="form-floating mb-3 col-md-12">
+              <input type="text" class="form-control" id="titulo" name="cidade" placeholder="" required />
+              <label for="titulo">Inserir cidade</label>
+            </div>
+          </div>
+        </div>
+        <div class="alinhar-em-linha">
+          <!-- inserir numero da casa -->
+          <div class="container">
+            <div class="form-floating mb-3 col-md-12">
+              <input type="text" class="form-control" id="titulo" name="numero" placeholder="" required />
+              <label for="titulo">Inserir número residência</label>
+            </div>
+          </div>
+
+          <!-- inicio inserir estado -->
+          <div class="container">
+            <div class="form-floating mb-3 col-md-12">
+              <select name="estado" class="caixa-estado">
+                <option selected>Selecione o estado</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </div>
+          </div>
+          <!-- inicio inserir cep -->
+          <div class="container">
+            <div class="form-floating mb-3 col-md-12">
+              <input type="number" min="0" class="form-control" id="titulo" name="cep" placeholder="" required />
+              <label for="titulo">Inserir CEP</label>
+            </div>
+          </div>
+        </div>
+        <!-- fim de alinha-horizontal -->
+      </fieldset>
+      <!-- fim de dados de endereço -->
+
+      <!-- inicio container botão -->
+      <div class="container-botao">
+        <!-- inicio do botão envio -->
+        <div class="d-grid gap-2 col-3">
+          <button type="submit">Salvar registro</button>
+        </div>
+        <!-- fim do botão envio -->
+
+        <!-- inicio do botão limpar -->
+        <div class="d-grid gap-2 col-3">
+          <button type="reset">Limpar</button>
+        </div>
+        <!-- fim do botão limpar -->
+
+        <!-- inicio do botão cancelar -->
+        <div class="d-grid gap-2 col-3">
+          <a href="/" class="btn btn-secondary col-md-12">Cancelar</a>
+        </div>
+        <!-- fim do botão cancelar -->
+      </div>
+      <!-- fim do container-botao -->
+    </form>
+    <!-- fim do formulário -->
+  </div>
+</div>
+
+
+<!-- Modal de Sucesso -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">Sucesso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Cadastro realizado com sucesso!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function gerarSenha(tamanho, incluirNumeros = true, incluirLetrasMaiusculas = true, incluirLetrasMinusculas = true, incluirCaracteresEspeciais = true) {
+    const numeros = '0123456789';
+    const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
+    const caracteresEspeciais = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+
+    let caracteres = '';
+
+    if (incluirNumeros) {
+      caracteres += numeros;
+    }
+    if (incluirLetrasMaiusculas) {
+      caracteres += letrasMaiusculas;
+    }
+    if (incluirLetrasMinusculas) {
+      caracteres += letrasMinusculas;
+    }
+    if (incluirCaracteresEspeciais) {
+      caracteres += caracteresEspeciais;
+    }
+
+    if (caracteres.length === 0) {
+      throw new Error('Nenhum tipo de caractere foi selecionado para a geração da senha.');
+    }
+
+    let senha = '';
+    for (let i = 0; i < tamanho; i++) {
+      const randomIndex = Math.floor(Math.random() * caracteres.length);
+      senha += caracteres[randomIndex];
+    }
+
+    return senha;
+  }
+
+  function preencherSenha() {
+    const senha = gerarSenha(12, true, true, true, true);
+    document.getElementById('senhaInput').value = senha;
+  }
+
+  function toggleDadosProfissionais() {
+    const cadastroMedico = document.getElementById('cadastroMedico').checked;
+    const dadosProfissionais = document.getElementById('dadosProfissionais');
+    dadosProfissionais.style.display = cadastroMedico ? 'block' : 'none';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    preencherSenha();
+    toggleDadosProfissionais();
+  });
+
+
+  // Script para mostrar o modal de sucesso
+  <% if (typeof success !== 'undefined' && success) { %>
+      var successModal = new bootstrap.Modal(document.getElementById('successModal'), {});
+      successModal.show();
+  <% } %>
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+</body>
+
+</html>

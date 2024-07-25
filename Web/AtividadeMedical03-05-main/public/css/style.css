@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #2e5efa;
+    --primary-color: #146520;
+}
+
+main {
+    width: 100%;
+    margin-top: 50px;
+    /* color: white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+body {
+    /* background-color: rgb(0, 158, 179); */
+    /* Assim que você atribuir a propriedade de CSS 'display: flex' ao elemento, ele passará a ser o que chamamos de flex container e todos seus filhos diretos, por sua vez, serão os flex-itens */
+
+    /* Alinha itens flexíveis ao longo da linha atual do flex container */
+    /* Alinha os itens ao centro */
+    /* min-height: 50vh; */
+
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    /* align-items: center; */
+    /* min-height: 100vh; */
+    background: #0475c0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+
+
+footer {
+    display: block;
+    position: fixed;
+    width: 100%;
+    /* Através do atributo bottom é possível definir a posição vertical do elemento em relação a sua borda inferior. */
+    bottom: 0vh;
+    left: 0;
+    background: #0475c0;
+    text-align: center;
+    /* A propriedade padding define uma a distância entre o conteúdo de um elemento e suas bordas.  */
+    padding: 2px;
+    z-index: 10;
+}
+
+header a {
+    text-decoration: none;
+}
+
+/* a{
+    flex-direction: row;
+} */
+
+/* img {
+    width: 150px;
+} */
+
+/* Container com itens alinhados ao centro */
+.container {
+    display: flex;
+    /* Alinha os itens ao centro */
+    align-items: center;
+    /* Largura que a div deve ocupar da área útil da tela*/
+    /* width: 80%; */
+    /* Espaçamento interno entre linhas e colunas */
+    gap: 5px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    background: #0475c0;
+    gap: 82.5rem;
+}
+
+/* Alinhar itens em linha */
+/* .alinhar-em-linha {
+    flex-direction: row;
+} */
+
+/* Alinhar itens em colunas */
+.alinhar-em-coluna {
+    flex-direction: column;
+}
+
+.alinhar-texto-centro {
+    text-align: center;
+}
+
+.title {
+    /* Tamanho da fonte */
+    font-size: 40px;
+    /* Alinha o texto ao centro */
+    text-align: center;
+    /* Define se permite a seleção do texto */
+    user-select: none;
+    /* Cor do texto definida através de variável criada no início do CSS */
+    color: var(--primary-color);
+}
+
+.row {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    gap: 10px;
+}
+
+table {
+    width: 100vw;
+    /* max-width: 800px; */
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin: 20px;
+}
+
+table tr {
+    width: 98%;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr th {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+table tr td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* home */
+
+.imagem {
+    display: flex;
+    margin-left: -500px;
+    margin-top: 30px;
+    width: 25rem;
+    height: 30rem;
+    border-radius: 500px;
+    border: 10px solid white;
+    box-shadow: 2px 2px 2px 2px;
+}
+
+.name {
+    display: flex;
+    padding: 1rem !important;
+    width: 30%;
+    text-align: center;
+}
+
+.frase {
+    display: flex;
+    padding: 1rem !important;
+    width: 30%;
+    text-align: center;
+}
+
+/* cadastro */
+
+.card {
+    display: flex;
+    width: 70%;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    /* Ajuste a margem superior conforme necessário */
+    z-index: 1;
+    /* Certifique-se de que o valor do z-index seja menor que o da navbar */
+}
+
+.card-header {
+    font-size: 20px;
+    text-align: center;
+}
+
+.alinhar-em-linha {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.caixa-genero {
+    height: 58px;
+    width: 292px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.caixa-estado {
+    height: 58px;
+    width: 213px;
+    background-color: #fff;
+    border-radius: 5px;
+
+}
+
+.container-botao {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Oculta as setas de seleção nos campos de número */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* model login */
+.form-group1 {
+    display: flex;
+    gap: 30px;
+}
+
+.form-group2 {
+    display: flex;
+    gap: 31.2px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-body {
+    display: flex;
+    position: relative;
+    padding: 50px;
+}
+
+.modal-bottom {
+    display: flex;
+    align-items: center;
+    margin-left: 55%;
+}
+
+button.bottom {
+    background-color: #0475c0;
+    color: white;
+    box-shadow: 2px, 2px, 2px, 2px;
+}
+
+.fs-5 {
+    font-size: 1.25rem !important;
+    color: #0475c0;
+}
+
+button.btn.btn-secondary {
+    background: red;
+    border: none;
+}
+
+/* minhas consultas */
+
+.h3,
+h3 {
+    font-size: 1.75rem;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* cadastro */
+
+.card {
+    display: flex;
+    width: 70%;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    /* Ajuste a margem superior conforme necessário */
+    z-index: 1;
+    /* Certifique-se de que o valor do z-index seja menor que o da navbar */
+}
+
+.card-header {
+    font-size: 20px;
+    text-align: center;
+}
+
+.alinhar-em-linha {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.caixa-genero {
+    height: 58px;
+    width: 292px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.caixa-estado {
+    height: 58px;
+    width: 213px;
+    background-color: #fff;
+    border-radius: 5px;
+
+}
+
+.container-botao {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Oculta as setas de seleção nos campos de número */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-container {
+    margin-top: 30px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-floating > label {
+    padding-left: 15px;
+  }
+  .form-floating > .form-control {
+    padding-left: 30px;
+  }
+
+.container-botao {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+
+/* CSS da página listar */
+
+.tableConsulta {
+    width: 97%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.h3,
+h3 {
+    font-size: 1.75rem;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+h3.titulo-consulta {
+    text-align: center;
+}
+
+th.rotulo {
+    background: #0475c0;
+}

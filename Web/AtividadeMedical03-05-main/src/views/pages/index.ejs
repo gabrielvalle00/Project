@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo ao MedicalGroup</title>
+    <!-- Adicione links para seus estilos CSS -->
+    <link rel="stylesheet" href="/caminho/para/seu/estilo.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="col">
+            <div class="name" style="font-size: 45px; color: white; font-weight: bold;">Bem vindo ao MedicalGroup!!</div>
+            <div class="frase" style="font-size: 25px; color: white;">Atendimentos com clínico geral, especialidades e exames. Solicite seu cadastro!</div>
+        </div>
+
+        <div class="container.body">
+            <img class="imagem" src="../../../images/cinematic-portrait-woman-working-healthcare-system-having-care-job.jpg">
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Faça seu login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/login" method="POST">
+                        <div class="form-group1">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="login" required>
+                        </div>
+                        <div class="form-group2">
+                            <label for="password">Senha:</label>
+                            <input type="password" id="password" name="senha" required>
+                        </div>
+
+                        <div class="modal-bottom">
+                            <button type="submit" class="bottom">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione scripts JavaScript, se necessário -->
+    <!-- <script src="/caminho/para/seu/script.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos os registros</title>
+    <style>
+      body {
+        background-color: #ffffff; /* Cor de fundo padrão */
+        transition: background-color 0.5s; /* Transição suave da cor de fundo */
+      }
+      /* estilos header */
+      header {
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      /* estilos main */
+      main {
+        max-height: 600px; /* altura máxima do contêiner */
+        overflow-y: auto; /* adiciona a barra de rolagem vertical */
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .container_linha {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        width: 90%;
+        height: 40px;
+        margin-left: 5%;
+      }
+      .dados_linha {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .botao_detalhes {
+        background-color: rgb(33, 227, 240);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      .botao_prontuario {
+        background-color: #2196f3;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        width: 200px;
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 2% auto; /* 5% from the top and centered */
+        padding: 0;
+        border: none;
+        width: 90%;
+        height: 90%; /* 90% of the viewport height */
+        position: relative;
+      }
+      .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      iframe {
+        width: 100%;
+        height: calc(100% - 40px); /* Adjust to fit within the modal */
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- inicio da header -->
+    <header>
+      <div class="container">
+        <div class="lado_esquerdo">
+          <label class="" id="">Pesque o nome do paciente</label>
+          <input type="search" id="search" placeholder="Pesquisar" />
+          <span class="search"></span>
+        </div>
+        <div class="lado_direito">
+          <label class="" id="">pesquise no periodo</label>
+          <input type="week" id="search" placeholder="Pesquisar" />
+          <span class="search"></span>
+        </div>
+      </div>
+    </header>
+    <!-- fim da header -->
+    <!-- inicio da main -->
+    <main>
+      <!-- exibição das informações -->
+      <div class="container_linha">
+        <div id="botao_detalhes">
+          <button
+            class="botao_detalhes"
+            src="./pag_erro.ejs"
+          >
+            Detalhes
+          </button>
+        </div>
+        <div class="dados_linha">
+          <p>Nome paciente</p>
+          <p>Especialidade</p>
+          <p>Nome do medico</p>
+          <p>Data da consulta</p>
+        </div>
+        <div id="botao_prontuario">
+          <button
+            class="botao_prontuario"
+            onclick="openModal();"
+          >
+            Ultimo prontuario
+          </button>
+        </div>
+      </div>
+      <!-- fim da exibição das informações -->
+    </main>
+    <!-- fim da main -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <iframe src="prontuario.html"></iframe>
+      </div>
+    </div>
+
+    <script>
+      function openModal() {
+        document.getElementById("myModal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+
+      // Close the modal when clicking outside of the modal content
+      window.onclick = function(event) {
+        if (event.target == document.getElementById("myModal")) {
+          closeModal();
+        }
+      }
+    </script>
+  </body>
+</html>

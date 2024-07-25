@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detalhes</title>
+    <style>
+      body {
+        background-color: #ffffff; /* Cor de fundo padrão */
+        display: flex;
+      }
+      /* estilo divisão da pagina */
+      .lado-esquerdo {
+        /* background-color: aqua; */
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .lado-direito {
+        /* background-color: blueviolet; */
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+      }
+      /* estilo posição dos campos  */
+      .cont-foto-esq {
+        width: 475px;
+        height: 30%;
+        margin-bottom: 17px;
+        margin-top: 35px;
+        margin-left: 5px;
+        margin-right: 4px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        display: flex;
+      }
+      .cont-dados-esq {
+        /* background-color: coral; */
+        width: 95%;
+        height: 60%;
+        margin-bottom: 35px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+      .container-historico-dir {
+        /* background-color: darkcyan; */
+        width: 1020px;
+        height: 70%;
+        margin-bottom: 17px;
+        margin-top: 35px;
+        margin-right: 17px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        overflow-y: auto; /* adiciona a barra de rolagem vertical */
+      }
+      .editar-protuario {
+        /* background-color: darkgoldenrod; */
+        width: 1020px;
+        height: 300px;
+        margin-bottom: 35px;
+        margin-right: 17px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+
+      /* stilos do historio de consultas */
+      .container_linha {
+        display: flex;
+        /* justify-content: space-around; */
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        border: 1px solid #ccc;
+        width: 960px;
+        height: 40px;
+      }
+      .botao_detalhes {
+        background-color: rgb(33, 227, 240);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      .dados_linha {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .botao_prontuario {
+        background-color: #2196f3;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        width: 200px;
+      }
+
+      /* estilos do infromações do paciente */
+      .cont-dados-esq {
+        /* display: flex; */
+      }
+      .dados-paciente {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .row01 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin: 5px;
+        display: block;
+        text-align: center;
+      }
+
+      .row02 {
+        font-size: 15px;
+        margin-bottom: 10px;
+        margin: 5px;
+        display: block;
+        text-align: center;
+      }
+
+      .dados-contato-paciente {
+        /* display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px; */
+      }
+      .endereco-paciente {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 1px;
+      }
+      .endereco-paciente p {
+      }
+
+      /* estilos caixa de edição protuario */
+      .linha-01 {
+        /* background-color: chartreuse; */
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+        /* padding: 10px;
+        margin-top: 20px; */
+        height: 20px;
+      }
+      .linha-02 {
+        width: 95%;
+        /* background-color: chartreuse; */
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        /* padding: 10px; */
+        /* margin-top: 10px; */
+      }
+      .caixa-01 {
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        /* padding: 10px; */
+        /* margin-top: 20px; */
+        margin-bottom: 20px;
+      }
+      .caixa-texto-01 {
+        width: 99;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+
+      .caixa-texto-02 {
+        width: 99%;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+
+      /* lado esquerdo */
+      /* stilos dados do paciente */
+      .cont-dados-esq {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 90%;
+        max-width: 800px;
+      }
+
+      label {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin: 5px;
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .dados-paciente {
+        display: flex;
+        flex-wrap: wrap;
+        /* gap: 10px; */
+        /* margin-bottom: 20px; */
+      }
+
+      .dados-paciente .item {
+        flex: 1 1 calc(20% - 10px);
+        background-color: #fafafa;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      .dados-contato-paciente {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .dados-contato-paciente .item {
+        flex: 1 1 calc(50% - 10px);
+        background-color: #fafafa;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        height: 25px;
+      }
+
+      .item p:first-child {
+        font-weight: bold;
+      }
+
+      .botao-01 {
+        padding: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- inicio lado esquerdo -->
+    <div class="lado-esquerdo">
+      <!-- inicio menu -->
+      <div class="cont-foto-esq"></div>
+      <!-- fim menu -->
+
+      <!-- inicio dados contato paciente -->
+      <div class="cont-dados-esq">
+        <label>Dados do Paciente</label>
+        <!-- inicio dados paciente -->
+        <div class="dados-paciente">
+          <div class="item nome-paciente">
+            <p class="row01">Nome:</p>
+            <p class="row02">Nomonono</p>
+          </div>
+          <div class="item idade-paciente">
+            <p class="row01">Idade</p>
+            <p class="row02">25</p>
+          </div>
+          <div class="item sexo-paciente">
+            <p class="row01">Sexo</p>
+            <p class="row02">Masculino</p>
+          </div>
+        </div>
+        <!-- fim dados paciente -->
+        <!-- inicio dados endereco paciente -->
+        <div class="dados-contato-paciente">
+          <div class="item endereco-paciente">
+            <p class="row01">Endereço</p>
+            <p class="row02">Rua teste, 123</p>
+          </div>
+          <div class="item endereco-paciente">
+            <p class="row01">Bairro</p>
+            <p class="row02">Bairro teste</p>
+          </div>
+          <div class="item endereco-paciente">
+            <p class="row01">Cidade</p>
+            <p class="row02">Cidade teste</p>
+          </div>
+          <div class="item endereco-paciente">
+            <p class="row01">Estado</p>
+            <p class="row02">Estado teste</p>
+          </div>
+          <div class="item endereco-paciente">
+            <p class="row01">País</p>
+            <p class="row02">País teste</p>
+          </div>
+
+          <div class="item endereco-paciente">
+            <p class="row01">CEP</p>
+            <p class="row02">12345-678</p>
+          </div>
+          <div class="item endereco-paciente">
+            <p class="row01">Email</p>
+            <p class="row02">0s7bW@example.com</p>
+          </div>
+        </div>
+        <!-- fim dados endereco paciente -->
+      </div>
+      <!-- fim dados contato paciente -->
+    </div>
+    <!-- fim lado esquerdo -->
+
+    <!-- inicio lado direito -->
+    <div class="lado-direito">
+      <div class="container-historico-dir">
+        <!-- exibição das informações -->
+        <div class="container_linha">
+          <div id="botao_detalhes">
+            <button class="botao_detalhes">Detalhes</button>
+          </div>
+          <div class="dados_linha">
+            <p>Nome paciente</p>
+            <p>Especialidade</p>
+            <p>Nome do medico</p>
+            <p>Data da consulta</p>
+          </div>
+          <div id="botao_prontuario">
+            <button class="botao_prontuario">Ultimo prontuario</button>
+          </div>
+        </div>
+        <!-- fim da exibição das informações -->
+      </div>
+      <div class="editar-protuario">
+        <div>
+          <label for="">Editar prontuário</label>
+        </div>
+        <div class="linha-01">
+          <p>Especialidade</p>
+          <p>consulta n.</p>
+        </div>
+        <div class="caixa-01">
+          <div class="linha-02">
+            <p>Diagnóstico</p>
+            <input type="text" class="caixa-texto-01" disabled />
+          </div>
+          <div class="linha-02">
+            <p>Medicação</p>
+            <input type="text" class="caixa-texto-02" disabled />
+          </div>
+          <div class="botao-01">
+            <button class="botao_editar">Editar prontuário</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="detalhesPaciente.js"></script>
+  </body>
+</html>

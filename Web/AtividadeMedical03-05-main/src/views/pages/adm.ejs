@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aba Lateral</title>
+    <style>
+        .sidebar {
+            height: 72vh;
+            width: 250px;
+            background-color: white;
+            padding-top: 0;
+            position: fixed;
+            left: -1px;
+            margin-top: 100px;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #0475c0;
+        }
+
+
+        .container.body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .imagem {
+            display: flex;
+            position: relative;
+            width: 29rem;
+            height: 30rem;
+            left: 60rem;
+            top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <a href="/listar" style="color: black;">Consultas Paciente</a>
+            <a href="/cadastro" style="color: black;">Cadastrar</a>
+            <a href="/agendarConsulta" style="color: black;">Agendar</a>
+            <a href="/todosOsResultados" style="color: black;">Consultas Médico</a>
+            <a href="/detalhesPaciente" style="color: black;">Detalhes Prontuário</a>
+            <a href="/" style="color: black;">Sair</a>
+        </div>
+
+        <div class="content">
+            <div class="container.body">
+                <img class="imagem"
+                    src="../../../images/Imagem_pag-adm.png">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

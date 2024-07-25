@@ -1,0 +1,30 @@
+
+
+header span {
+    gap: 100;
+    padding: 100;
+
+}
+
+.logo{
+    width: 70px;
+    height: 70px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    background: #0475c0;
+}
+
+.navbar-brand{
+    display: flex;
+    color: #0475c0;
+    font-weight: bold;
+}
+
+.container-fluid{
+    gap: 15px;
+    margin-left: 10px;
+}
+

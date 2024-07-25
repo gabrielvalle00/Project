@@ -1,0 +1,83 @@
+{
+    "cpf": "36758801845",
+    "nome": "Denilson Araujo",
+    "data_nasc": "05/09/1990",
+    "genero": "Masculino",
+    "email": "ana.oliveira@example.com",
+    "logradouro": "Rua das Flores",
+    "bairro": "Centro",
+    "estado": "SP",
+    "numero": "789",
+    "complemento": "Apto 101",
+    "cep": "01000000",
+    "tel1": "11987654321",
+    "tel2": "1122222222",
+    "data_admissao": null,
+    "crm": "",
+    "login": "ana.oliveira",
+    "senha": "senha123",
+    "status": 1,
+    "perfil": "paciente",
+    "desc_especialidade": ""
+}
+
+{/*{   
+
+
+
+
+
+
+    "cpf": "470982535664",
+    "nome": "Gabriel Pantalhão",
+    "data_nasc": "13/12/2003",
+    "genero": "Masculino",
+    "email": "pantalhaog@gmail.com",
+    
+    "endereco":[
+        {
+            "logradouro":"Rua Eutanásia floripa",
+            "bairro":"Suburbo",
+            "estado": "SP",
+            "numero": "345",
+            "complemento": "Perto a algum lugar",
+            "cep": "13199362"
+        }
+    ],
+    
+    "telefone":[
+        {
+            "numero":"19988565031"
+        },
+        {
+            "numero":"19988565031"
+        }
+    ],
+
+    "funcionario":[
+        {
+            "data_admissao":"",
+            "crm":""
+        }
+    ],
+
+    "login":[
+        {
+            "login": "nome@dominio.com",
+            "senha":"12345678",
+            "status": 1
+        }
+    ],
+
+    "perfil": [
+        {
+            "tipo": "Paciente"
+        }
+    ],
+
+    "especialidade": [
+        {
+            "desc_especialidade": ""
+        }
+    ]
+}*/}

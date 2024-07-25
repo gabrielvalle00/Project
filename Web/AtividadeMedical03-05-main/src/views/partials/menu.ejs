@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/menu.css">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="height: 80px;">
+
+    <div class="div-logo">
+        <a  href="/">
+            <img class="logo" src="../../../images/v987-18a.jpg">
+        </a>
+        
+    </div>
+
+    <div class="container-fluid" style="width: 65%;">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Modal de Login -->
+                <li class="nav-item">
+                    <% if(usuarioLogado){%>
+                        <a class="navbar-brand" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">henry</a>                     
+                            <%}else{%>
+                                <a class="navbar-brand" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Login</a>
+                                <% } %>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

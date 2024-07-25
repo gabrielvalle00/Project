@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta</title>
+    <link rel="stylesheet" href="/public/css/style.css"> <!-- Inclua seu arquivo de estilo aqui -->
+    <script src="/src/Controllers/clienteController.js" defer></script> <!-- Inclua seu controlador aqui -->
+</head>
+
+<body>
+    <div class="card col-md-12">
+        <h5 class="card-header">Agendar Consulta</h5>
+        <div class="card-body">
+            <form class="form-group" id="agendarConsulta" method="post">
+                <!-- Seleção de data e especialidade -->
+                <fieldset class="form-group">
+                    <div class="container">
+                        <div class="mb-2 col-md-6">
+                            <legend class="col-form-label col-sm-6 pt-0" style="font-weight: bold; margin-left: -10px;">
+                                Selecione a Data e Hora</legend>
+                            <input type="date" class="form-control" id="dataAgenda" name="dataAgenda"
+                                placeholder="Selecione a data" required>
+                            <!-- <label for="dataAgenda">Data da Consulta</label> -->
+
+                            <input type="time" class="form-control" id="horaAgenda" name="horaAgenda"
+                                placeholder="Selecione a hora" required>
+                            <!-- <label for="horaAgenda">Hora Consulta</label> -->
+                        </div>
+
+                        <div class="mb-2 mt-5 col-md-6">
+                            <legend class="col-form-label col-sm-6 pt-0" style="font-weight: bold; margin-left: 10px;">
+                                Selecione a especialidade</legend>
+                            <div class="container">
+
+                                <div class="form-floating mb-3 col-md-5">
+                                    <div>
+                                        <input type="radio" id="especialidade1" name="especialidade" value="cardiologia"
+                                            required>
+                                        <label for="especialidade1">Cardiologia</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="especialidade2" name="especialidade" value="pediatria">
+                                        <label for="especialidade2">Pediatria</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="especialidade1" name="especialidade"
+                                            value="clinico-geral">
+                                        <label for="especialidade1">Clínico Geral</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="especialidade2" name="especialidade"
+                                            value="oftalmologo">
+                                        <label for="especialidade2">Oftalmologista</label>
+                                    </div>
+                                </div>
+
+                                <div class=" form-floating mb-3 col-md-5">
+                                    <div>
+                                        <input type="radio" id="especialidade3" name="especialidade"
+                                            value="nutricionista">
+                                        <label for="especialidade3">Nutricionista</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="especialidade4" name="especialidade"
+                                            value="ginecologista">
+                                        <label for="especialidade4">Ginecologista</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="especialidade5" name="especialidade" value="pediatra">
+                                        <label for="especialidade5">Pediatra</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="especialidade6" name="especialidade"
+                                            value="ortopedista">
+                                        <label for="especialidade6">Ortopedista</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Seleção de Médico -->
+                <fieldset class="form-group mb-4">
+                    <legend class="col-form-label col-sm-6 pt-0" style="font-weight: bold;">Seleção de Médico</legend>
+                    <div class="container">
+
+                        <select id="selectMedico" class="form-select col-md-12">
+                            <option selected>Escolha o médico</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Seleção de Paciente -->
+                <fieldset class="form-group mb-5">
+                    <legend class="col-form-label col-sm-6 pt-0" style="font-weight: bold;">Seleção de Paciente</legend>
+                    <div class="container">
+                        <select id="selectPaciente" class="form-select col-md-12">
+                            <option selected>Escolha o paciente</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- inicio container botão -->
+                <div class="container-botao">
+                    <!-- inicio do botão envio -->
+                    <div class="d-grid gap-2 col-3">
+                        <button type="submit">Salvar registro</button>
+                    </div>
+                    <!-- fim do botão envio -->
+
+                    <!-- inicio do botão limpar -->
+                    <div class="d-grid gap-2 col-3">
+                        <button type="reset">Limpar</button>
+                    </div>
+                    <!-- fim do botão limpar -->
+
+                    <!-- inicio do botão cancelar -->
+                    <div class="d-grid gap-2 col-3">
+                        <a href="/agendarConsulta" class="btn btn-secondary col-md-12">Cancelar</a>
+                    </div>
+                    <!-- fim do botão cancelar -->
+                </div>
+                <!-- fim do container-botao -->
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
